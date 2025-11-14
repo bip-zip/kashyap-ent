@@ -3,9 +3,1036 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kashyap Enterprises & Corporation - Building the Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: "Raleway", sans-serif;
+            background: #ffffff;
+            color: #1d1d1f;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Typography Scale */
+        .text-heading-1 {
+            font-size: clamp(3rem, 5vw, 4.8rem);
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        
+        .text-heading-2 {
+            font-size: clamp(2.5rem, 4vw, 3.9rem);
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        .text-heading-3 {
+            font-size: clamp(1.75rem, 3vw, 2.4rem);
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        
+        .text-body-lg {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            line-height: 1.6;
+        }
+        
+        .text-body {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            line-height: 1.7;
+        }
+        
+        /* Background Graphics */
+        .bg-graphics {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .circle-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(43, 127, 255, 0.08) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .circle-2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(5, 34, 52, 0.06) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+        
+        .grid-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(43, 127, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(43, 127, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link.active {
+            color: #2b7fff;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #2b7fff;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #2b7fff 0%, #052234 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(43, 127, 255, 0.2);
+        }
+        
+        .btn-primary {
+            background: #2b7fff;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #1a6fef;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(43, 127, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #2b7fff;
+            color: #2b7fff;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #2b7fff;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .stat-number {
+            font-weight: 800;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e5e7, transparent);
+        }
+        
+        /* Creative About Section */
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2b7fff;
+            box-shadow: 0 0 0 4px rgba(43, 127, 255, 0.2);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            width: 2px;
+            height: calc(100% - 16px);
+            background: linear-gradient(to bottom, #2b7fff, transparent);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        /* Why Choose Us Cards */
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(43, 127, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        @keyframes gradientMove {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+                }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center">
+                        <img src="logo.svg" alt="Kashyap Enterprises Logo" class="w-12 h-12">
+                    </div>
+                    <span class="text-xl font-semibold text-gray-900">Kashyap Enterprises</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 font-semibold">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Services</a>
+                    <a href="#subsidiaries" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Our Group</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300">Contact</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
     
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full h-full bg-white z-40 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="mobile-link text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors">Home</a>
+            <a href="#about" class="mobile-link text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors">About</a>
+            <a href="#services" class="mobile-link text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors">Services</a>
+            <a href="#subsidiaries" class="mobile-link text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors">Our Group</a>
+            <a href="#contact" class="mobile-link text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <section id="home" class="relative pt-24 pb-16 px-4 md:px-6 min-h-screen flex items-center">
+        <div class="bg-graphics">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="grid-pattern"></div>
+        </div>
+
+        <!-- hero section -->
+        
+        <div class="max-w-6xl mx-auto w-full relative z-10 mt-20">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
+                    Inspiring Futures <br>
+                    <span class="
+                      bg-clip-text text-transparent 
+                      bg-gradient-to-r from-blue-500 via-sky-500 to-blue-900
+                      [background-size:200%_200%] 
+                      animate-[gradientMove_4s_ease_infinite]
+                    ">
+                      Empowering Nepal
+                    </span>
+                  </h1>
+                <p class="text-base md:text-lg text-gray-600 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                    A diversified group delivering world-class services across Travel, Cargo, Hospitality & Education
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#subsidiaries" class="btn-primary px-8 py-3 rounded-full text-base text-white font-medium inline-block">
+                        Explore Our Companies
+                    </a>
+                    <a href="#contact" class="btn-secondary px-8 py-3 rounded-full text-base font-medium inline-block">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-20 fade-in">
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">4</div>
+                    <p class="text-sm md:text-base text-gray-600 font-medium">Business Verticals</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">20+</div>
+                    <p class="text-sm md:text-base text-gray-600 font-medium">Years of Trust</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">1000+</div>
+                    <p class="text-sm md:text-base text-gray-600 font-medium">Happy Clients</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-bold gradient-text mb-2">100%</div>
+                    <p class="text-sm md:text-base text-gray-600 font-medium">Commitment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- About Section - Creative Design -->
+    <section id="about" class="relative py-24 px-6">
+        <div class="bg-graphics">
+            <div class="grid-pattern"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20 fade-in">
+                <h2 class="text-heading-2 text-gray-900 mb-4">About Us</h2>
+                <p class="text-body-lg text-gray-600 max-w-3xl mx-auto font-light">
+                    Committed to delivering excellence across every sector we touch
+                </p>
+            </div>
+            
+            <!-- Company Story -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                <div class="slide-in-left">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-900 rounded-3xl p-12 text-white shadow-2xl">
+                        <div class="mb-8">
+                            <div class="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-6">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-heading-3 mb-4">Our Journey</h3>
+                            <p class="text-body-lg opacity-90 leading-relaxed">
+                                From a single vision to a diversified group, we've grown by staying true to our values and commitment to excellence.
+                            </p>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="timeline-item">
+                                <h4 class="font-bold mb-1">Founded in Nepal</h4>
+                                <p class="text-sm opacity-80">Started with a mission to serve our community</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-bold mb-1">Expanded Services</h4>
+                                <p class="text-sm opacity-80">Added travel, logistics, and education</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="font-bold mb-1">Today & Beyond</h4>
+                                <p class="text-sm opacity-80">Serving thousands with regional ambitions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-in-right space-y-8">
+                    <div>
+                        <h3 class="text-heading-3 text-gray-900 mb-4">Who We Are</h3>
+                        <p class="text-body text-gray-600 mb-6 leading-relaxed">
+                            Kashyap Enterprises & Corporation Pvt. Ltd. is a diversified group based in Nepal, committed to delivering excellence across travel, logistics, hospitality and education.
+                        </p>
+                        <p class="text-body text-gray-600 leading-relaxed">
+                            With a customer-first mindset and a strong foundation built on integrity, innovation and quality, we aim to create value for our clients, employees and stakeholders.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="text-4xl mb-2">🎯</div>
+                            <h4 class="font-bold text-gray-900 mb-1">Mission Driven</h4>
+                            <p class="text-sm text-gray-600">Excellence in every service</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-2xl p-6">
+                            <div class="text-4xl mb-2">🌟</div>
+                            <h4 class="font-bold text-gray-900 mb-1">Customer First</h4>
+                            <p class="text-sm text-gray-600">Your success is ours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vision & Mission -->
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <div class="card-hover bg-white border border-gray-200 rounded-3xl p-10 scale-in">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-3 text-gray-900 mb-4">Our Vision</h3>
+                    <p class="text-body text-gray-600 leading-relaxed">
+                        To be the premier group in Nepal and the region — recognised for our trusted services, dynamic growth and positive impact in every sector we touch.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-white border border-gray-200 rounded-3xl p-10 scale-in">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-3 text-gray-900 mb-4">Our Mission</h3>
+                    <ul class="text-body text-gray-600 space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            <span>Empowering our subsidiaries to excel in their fields</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            <span>Delivering seamless and high-quality solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2">•</span>
+                            <span>Driving sustainable growth and fostering communities</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Core Values -->
+            <div class="fade-in">
+                <h3 class="text-heading-3 text-gray-900 text-center mb-12">Our Core Values</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div class="text-center p-6 rounded-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-body">Integrity</h4>
+                        <p class="text-sm text-gray-600">Honesty & transparency</p>
+                    </div>
+                    <div class="text-center p-6 rounded-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer">
+                        <div class="text-5xl mb-4">⭐</div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-body">Excellence</h4>
+                        <p class="text-sm text-gray-600">Highest standards</p>
+                    </div>
+                    <div class="text-center p-6 rounded-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer">
+                        <div class="text-5xl mb-4">💡</div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-body">Innovation</h4>
+                        <p class="text-sm text-gray-600">Smarter solutions</p>
+                    </div>
+                    <div class="text-center p-6 rounded-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer">
+                        <div class="text-5xl mb-4">❤️</div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-body">Customer First</h4>
+                        <p class="text-sm text-gray-600">You're our priority</p>
+                    </div>
+                    <div class="text-center p-6 rounded-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer">
+                        <div class="text-5xl mb-4">🤝</div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-body">Collaboration</h4>
+                        <p class="text-sm text-gray-600">Teamwork & synergy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="relative py-24 px-6 bg-gray-50">
+        <div class="bg-graphics">
+            <div class="circle-1" style="top: auto; bottom: -200px;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-heading-2 text-gray-900 mb-4">What We Do</h2>
+                <p class="text-body-lg text-gray-600 max-w-3xl mx-auto font-light">
+                    Strategic oversight and brand management across diverse business verticals
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="slide-in-left bg-white rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-3 text-gray-900 mb-4">Quality Assurance</h3>
+                    <p class="text-body text-gray-600 leading-relaxed">
+                        We maintain the highest standards across all our subsidiaries, ensuring consistent excellence and reliability in every service we deliver.
+                    </p>
+                </div>
+                
+                <div class="scale-in bg-white rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-3 text-gray-900 mb-4">Strategic Leadership</h3>
+                    <p class="text-body text-gray-600 leading-relaxed">
+                        Our experienced leadership team provides strategic direction and operational excellence, driving growth and innovation across the group.
+                    </p>
+                </div>
+                
+                <div class="slide-in-right bg-white rounded-3xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-heading-3 text-gray-900 mb-4">Integrated Synergies</h3>
+                    <p class="text-body text-gray-600 leading-relaxed">
+                        We create value through synergies between our business units, offering comprehensive solutions and seamless experiences to our clients.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Why Choose Us - Creative Section -->
+            <div class="fade-in">
+                <div class="text-center mb-12">
+                    <h3 class="text-heading-3 text-gray-900 mb-4">Why Choose Us</h3>
+                    <p class="text-body text-gray-600 max-w-3xl mx-auto">
+                        Experience the difference of working with a trusted partner committed to your success
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="feature-card bg-white rounded-2xl p-8 text-center card-hover border border-gray-200">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-3">Proven Track Record</h4>
+                        <p class="text-sm text-gray-600">20+ years of excellence serving thousands of satisfied clients</p>
+                    </div>
+                    
+                    <div class="feature-card bg-white rounded-2xl p-8 text-center card-hover border border-gray-200">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-3">One-Stop Solution</h4>
+                        <p class="text-sm text-gray-600">Comprehensive services under one trusted umbrella</p>
+                    </div>
+                    
+                    <div class="feature-card bg-white rounded-2xl p-8 text-center card-hover border border-gray-200">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-3">24/7 Support</h4>
+                        <p class="text-sm text-gray-600">Always here when you need us, round the clock assistance</p>
+                    </div>
+                    
+                    <div class="feature-card bg-white rounded-2xl p-8 text-center card-hover border border-gray-200">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-3">Local Expertise</h4>
+                        <p class="text-sm text-gray-600">Deep understanding of Nepal's market and culture</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-12 text-white text-center">
+                    <h3 class="text-heading-3 mb-4">Our Commitment to Excellence</h3>
+                    <p class="text-body-lg max-w-4xl mx-auto leading-relaxed opacity-95">
+                        With our diverse portfolio of service-oriented companies, we provide comprehensive solutions under one umbrella. We combine local expertise, strong operational control and a growth-oriented mindset to deliver consistent value. Whether you are booking a tour, shipping a parcel, staying at our hospitality service or enrolling in a course — our commitment remains the same: to deliver excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Subsidiaries Section -->
+    <section id="subsidiaries" class="relative py-24 px-6">
+        <div class="bg-graphics">
+            <div class="grid-pattern"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-heading-2 text-gray-900 mb-4">Our Group Companies</h2>
+                <p class="text-body-lg text-gray-600 max-w-3xl mx-auto font-light">
+                    Four distinct businesses, one unified vision of excellence
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Travel & Tours -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-3xl p-8 scale-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 text-gray-900">Travel & Tours</h3>
+                    </div>
+                    <p class="text-body text-gray-600 leading-relaxed mb-6">
+                        Explore the world with confidence. Our team offers curated packages, seamless bookings and wonderful experiences tailored to your needs. From adventure tourism to cultural journeys, we make every trip memorable.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Learn more 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Cargo & Shipping -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-3xl p-8 scale-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 text-gray-900">Cargo & Shipping</h3>
+                    </div>
+                    <p class="text-body text-gray-600 leading-relaxed mb-6">
+                        Reliable logistics and parcel management from door-to-door, with tracking and support every step of the way. We ensure your shipments arrive safely, on time, every time with complete peace of mind.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Learn more 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Hospitality -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-3xl p-8 scale-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 text-gray-900">Hospitality</h3>
+                    </div>
+                    <p class="text-body text-gray-600 leading-relaxed mb-6">
+                        Welcoming stays, attentive service and excellent amenities. Our hospitality business is designed to offer comfort, quality and memorable experiences for every guest who walks through our doors.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Learn more 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Education Services -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-white border border-gray-200 rounded-3xl p-8 scale-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-heading-3 text-gray-900">Education Services</h3>
+                    </div>
+                    <p class="text-body text-gray-600 leading-relaxed mb-6">
+                        We empower learners through quality programs, dedicated trainers and a strong support ecosystem to help students succeed in their academic and professional journeys towards a brighter future.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Learn more 
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-24 px-6 bg-gray-50">
+        <div class="bg-graphics">
+            <div class="circle-2" style="top: -100px; bottom: auto;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-heading-2 text-gray-900 mb-4">Get in Touch</h2>
+                <p class="text-body-lg text-gray-600 max-w-3xl mx-auto font-light">
+                    We'd love to hear from you. Whether you're a customer, partner or prospective team member — please reach out.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="slide-in-left space-y-8">
+                    <div class="bg-white rounded-3xl p-8 card-hover">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Our Location</h3>
+                                <p class="text-body text-gray-600">Kathmandu, Bagmati Province<br>Nepal</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 card-hover">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Email Us</h3>
+                                <p class="text-body text-gray-600">info@kashyap.com.np</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-8 card-hover">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Call Us</h3>
+                                <p class="text-body text-gray-600">+977-XXX-XXXX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="slide-in-right">
+                    <form id="contactForm" class="bg-white rounded-3xl p-8 shadow-xl">
+                        <div class="mb-6">
+                            <label class="block text-gray-900 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-900 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-900 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary px-8 py-4 rounded-xl text-white font-medium">
+                            Send Message
+                        </button>
+                        
+                        <p id="formMessage" class="mt-4 text-center text-sm hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <img src="logo.svg" alt="Kashyap Logo" class="p-1">
+                        </div>
+                        <span class="font-semibold">Kashyap Enterprises</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Building the future through excellence in travel, cargo, hospitality and education.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Our Companies</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Travel & Tours</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cargo & Shipping</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hospitality</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Education Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-lg flex items-center justify-center hover:bg-opacity-20 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-lg flex items-center justify-center hover:bg-opacity-20 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white bg-opacity-10 rounded-lg flex items-center justify-center hover:bg-opacity-20 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <h4 class="font-bold mb-2 text-sm">Contact Info</h4>
+                    <ul class="space-y-1 text-gray-400 text-sm">
+                        <li>Kathmandu, Nepal</li>
+                        <li>info@kashyap.com.np</li>
+                        <li>+977-XXX-XXXX</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Kashyap Enterprises & Corporation Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Active Navigation on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function updateActiveNav() {
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('nav-blur', 'shadow-lg');
+            } else {
+                navbar.classList.remove('nav-blur', 'shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simulate form submission
+            formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+            formMessage.classList.remove('hidden', 'text-red-600');
+            formMessage.classList.add('text-green-600');
+            
+            contactForm.reset();
+            
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Initialize active nav on load
+        updateActiveNav();
+    </script>
 </body>
 </html>
